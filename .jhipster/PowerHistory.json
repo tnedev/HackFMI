@@ -1,0 +1,24 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "timestamp",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "power",
+            "fieldType": "Double"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "current",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20151219192055",
+    "dto": "no",
+    "service": "no",
+    "pagination": "infinite-scroll"
+}

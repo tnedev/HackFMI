@@ -1,0 +1,52 @@
+<div>
+    <h2>PowerHistorys</h2>
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="powerHistory.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new PowerHistory</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="reset()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="timestamp"><span>Timestamp</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="power"><span>Power</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="current"><span>Current</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="loadPage(page + 1)" infinite-scroll-disabled="links['last'] == page">
+                <tr ng-repeat="powerHistory in powerHistorys track by powerHistory.id">
+                    <td><a ui-sref="powerHistory.detail({id:powerHistory.id})">{{powerHistory.id}}</a></td>
+                    <td>{{powerHistory.timestamp | date:'medium'}}</td>
+                    <td>{{powerHistory.power}}</td>
+                    <td>{{powerHistory.current}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="powerHistory.detail({id:powerHistory.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="powerHistory.edit({id:powerHistory.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="powerHistory.delete({id:powerHistory.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
