@@ -1,0 +1,22 @@
+{
+  "generator-jhipster": {
+    "baseName": "power",
+    "packageName": "eu.hadzhipopov.power",
+    "packageFolder": "eu/hadzhipopov/power",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "a79fb3a2f6999bd06aa4a24d34460e180bda395a",
+    "testFrameworks": []
+  }
+}
